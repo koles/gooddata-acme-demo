@@ -1,0 +1,66 @@
+{
+    "entities": {
+        "customers": {
+            "global": {
+                "custom": {
+                    "hub": [
+                        "customer_id"
+                    ],
+                    "export_type": "full"
+                }
+            }
+        },
+        "orders": {
+            "global": {
+                "custom": {
+                    "hub": [
+                        "order_id"
+                    ],
+                    "export_type": "full"
+                }
+            }
+        }
+    },
+    "downloaders": {
+        "csv_downloader_1": {
+            "type": "csv",
+            "settings": "sftp_csv",
+            "entities": [
+                "customers",
+                "orders"
+            ]
+        }
+    },
+    "integrators": {
+        "ads_integrator_1": {
+            "type": "ads_storage",
+            "batches": [
+                "csv_downloader_1"
+            ]
+        }
+    },
+    "sftp_csv": {
+        "options": {
+            "username": "stfp4demo",
+            "host": "financial-services-gd.com",
+            "auth_mode": "password",
+            "folder": "/stfp4demo/manifest",
+            "move_data_after_processing_to_path": "/stfp4demo/processed",
+            "data_structure_info": "/stfp4demo/feed.txt",
+            "ignore_check_sum": false,
+            "files_structure": {
+                "enclosed_by": "\""
+            }
+        },
+        "type": "sftp"
+    },
+    "ads_storage": {
+        "instance_id": "def595773d73c7b6fcec547b8ae4021b",
+        "username": "se+demos-admin@gooddata.com",
+        "server": "salesengineering.na.gooddata.com",
+        "options": {
+            "recreate_source_tables": true,
+            "disable_sys_load_id_logging": false
+        }
+    }
+}

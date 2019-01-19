@@ -1,0 +1,8 @@
+.git
+.DS_Store
+data/temp/*
+data/processed/*
+bin/lib/creds.sh
+cc_project/
+doc/
+bin2/

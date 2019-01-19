@@ -1,0 +1,14 @@
+drop view ls_customers;
+drop view ls_orders;
+drop table _sys_batch_id;
+drop table _sys_file;
+drop table _sys_load_id;
+drop table src_csv_customers_merge CASCADE;
+drop table src_csv_customers_merge_diff;
+drop table src_csv_customers_merge_uniq;
+drop table src_csv_orders_merge CASCADE;
+drop table src_csv_orders_merge_diff;
+drop table src_csv_orders_merge_uniq;
+drop table stg_csv_customers_merge;
+drop table stg_csv_orders_merge;
+drop table out_orders;

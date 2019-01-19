@@ -1,0 +1,15 @@
+file|version|field|type|order|date_format
+customers|1|customer_id|varchar(10)|1|
+customers|1|birthdate|datetime|2|YYYY/MM/DD
+customers|1|gender|varchar(2)|3|
+customers|1|ip_address|varchar(24)|4|
+customers|1|ip_address_country_code3|varchar(3)|5|
+customers|1|ip_address_city|varchar(24)|6|
+customers|1|ip_address_latitude|decimal(16,6)|7|
+customers|1|ip_address_longitude|decimal(16,6)|8|
+orders|1|order_date|datetime|1|YYYY/MM/DD
+orders|1|order_id|varchar(20)|2|
+orders|1|customer_id|varchar(10)|3|
+orders|1|category|varchar(40)|4|
+orders|1|price|decimal(12,2)|5|
+orders|1|quantity|integer|6|
