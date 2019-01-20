@@ -1,4 +1,6 @@
-# Creates a gooddata manifest file from CSV data files
+# Given a csv file and a path argument, creates a manifest file,
+# or adds to an existing manifest file.
+#
 # Assumes that datafiles follow standard naming convention:
 #    {entity_name}_{version}_{timestamp}.csv
 #
@@ -65,7 +67,7 @@ echo "Data file ${newfile} has ${num_rows} rows"
 # extract the parts of the file name
 # assumes default naming scheme: entity_version_timestamp.csv
 basename=`basename ${newfile}`
-t1="${newfile##*_}"
+t1="${basename##*_}"
 timestamp="${t1%.*}"
 entity="${basename%%_*}"
 

@@ -10,3 +10,9 @@ Scripts that use SFTP rely on the `sshpass` utility, which can be installed via 
 ```
 brew install https://raw.githubusercontent.com/kadwanev/bigboybrew/master/Library/Formula/sshpass.rb
 ```
+
+Scripts that use S3 rely on the [AWS Command Line Interface](https://aws.amazon.com/cli/).
+
+Generally useful scripts:
+
+* add2manifest.sh -- given a csv file, creates a manifest file, or adds to an existing manifest file.
