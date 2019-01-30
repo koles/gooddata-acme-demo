@@ -60,8 +60,7 @@ fi
 
 # Compute the checksum and number of rows
 cksum=`md5 -q $newfile`
-lines=`cat $newfile | wc -l`
-num_rows=`expr $lines - 1`
+num_rows=`tail +2 $newfile | wc -l`
 echo "Data file ${newfile} has ${num_rows} rows"
 
 # extract the parts of the file name
