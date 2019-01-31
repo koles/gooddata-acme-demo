@@ -1,6 +1,7 @@
 # Download new orders, create manifest, upload to SFTP
 
 ./bin/lib/dir_check.sh
+
 if [ ! -f ~/.sshpass_acme ]; then
   echo "error: .sshpass_acme file not found"
   exit 1

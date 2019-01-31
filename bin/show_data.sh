@@ -1,4 +1,5 @@
 # Just showing the structure of the data files
+# Uses csvkit
 
 ./bin/lib/dir_check.sh
 
