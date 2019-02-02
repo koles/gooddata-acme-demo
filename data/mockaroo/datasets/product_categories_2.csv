@@ -1,0 +1,19 @@
+category_id,category,sub-category,avg_price,frequency
+110,Clothing,Pullover,24,8
+120,Clothing,Polo Shirt,23,23
+130,Clothing,Slacks,20,22
+140,Clothing,Shorts,19,18
+150,Clothing,Skirt,18,14
+160,Clothing,T-Shirt,17.5,50
+210,Electronics,Artego,100,
+220,Electronics,Compglass,50,
+230,Electronics,Magnemo,75,
+240,Electronics,PortaCode,25,
+310,Home,Applica,33,
+320,Home,ChalkTalk,66,
+330,Home,Optique,99,
+340,Home,Peril,11,
+410,Outdoor,Biolid,230,
+420,Outdoor,Elentrix,480,
+430,Outdoor,Integres,720,
+440,Outdoor,Neptide,1350,

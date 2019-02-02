@@ -1,0 +1,57 @@
+{
+  "id": 152025,
+  "num_rows": 1000,
+  "file_format": "csv",
+  "name": "customers",
+  "include_header": true,
+  "columns": [
+    {
+      "name": "customer_id",
+      "null_percentage": 0,
+      "type": "Regular Expression",
+      "value": "\\d{8}",
+      "formula": ""
+    },
+    {
+      "name": "fullname",
+      "null_percentage": 0,
+      "type": "Full Name",
+      "formula": ""
+    },
+    {
+      "name": "__birthdate_offset",
+      "null_percentage": 0,
+      "type": "Normal Distribution",
+      "mean": "0",
+      "sd": "3600",
+      "decimals": 0,
+      "formula": ""
+    },
+    {
+      "name": "__corrected_offset",
+      "null_percentage": 0,
+      "type": "Formula",
+      "value": "if __birthdate_offset >= 3600 then (0 - __birthdate_offset) else __birthdate_offset end",
+      "formula": ""
+    },
+    {
+      "name": "birthdate",
+      "null_percentage": 0,
+      "type": "Formula",
+      "value": "date('1/1/1990') + days(__corrected_offset)",
+      "formula": ""
+    },
+    {
+      "name": "gender",
+      "null_percentage": 0,
+      "type": "Gender (abbrev)",
+      "formula": ""
+    },
+    {
+      "name": "ip_address",
+      "null_percentage": 0,
+      "type": "IP Address v4",
+      "formula": ""
+    }
+  ]
+}

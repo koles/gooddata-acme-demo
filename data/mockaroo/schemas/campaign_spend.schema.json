@@ -1,0 +1,41 @@
+{
+  "id": 124354,
+  "num_rows": 50,
+  "file_format": "csv",
+  "name": "campaign_spend",
+  "include_header": true,
+  "columns": [
+    {
+      "name": "campaign_id",
+      "null_percentage": 0,
+      "type": "Dataset Column",
+      "dataset": "spend_model",
+      "column": "campaign_id",
+      "selectionStyle": "sequential",
+      "formula": ""
+    },
+    {
+      "name": "category",
+      "null_percentage": 0,
+      "type": "Dataset Column",
+      "dataset": "spend_model",
+      "column": "category",
+      "selectionStyle": null,
+      "formula": ""
+    },
+    {
+      "name": "date",
+      "null_percentage": 0,
+      "type": "Formula",
+      "value": "(date(from_dataset(\"campaigns\",\"start_date\", campaign_id: campaign_id)) + days(random(-3,10))).strftime(\"%Y-%m-%d\")",
+      "formula": "from_dataset(\"campaigns\",\"start_date\", campaign_id: campaign_id)"
+    },
+    {
+      "name": "amount",
+      "null_percentage": 0,
+      "type": "Scenario",
+      "scenario": "marketing_spend_categories",
+      "formula": ""
+    }
+  ]
+}

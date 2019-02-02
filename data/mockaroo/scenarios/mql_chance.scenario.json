@@ -1,0 +1,55 @@
+{
+  "id": 1734,
+  "name": "mql_chance",
+  "distribution": "normal",
+  "rules": [
+    {
+      "values": [
+        {
+          "column": "channel",
+          "value": "Tradeshow"
+        }
+      ],
+      "normal_dist_mean": 95,
+      "normal_dist_sd": 0,
+      "normal_dist_decimals": 0,
+      "percent_null": 0
+    },
+    {
+      "values": [
+        {
+          "column": "channel",
+          "value": "Digital"
+        }
+      ],
+      "normal_dist_mean": 70,
+      "normal_dist_sd": 0,
+      "normal_dist_decimals": 0,
+      "percent_null": 0
+    },
+    {
+      "values": [
+        {
+          "column": "channel",
+          "value": "Email"
+        }
+      ],
+      "normal_dist_mean": 50,
+      "normal_dist_sd": 0,
+      "normal_dist_decimals": 0,
+      "percent_null": 0
+    },
+    {
+      "values": [
+        {
+          "column": "channel",
+          "value": "Content Syndication"
+        }
+      ],
+      "normal_dist_mean": 40,
+      "normal_dist_sd": 0,
+      "normal_dist_decimals": 0,
+      "percent_null": 0
+    }
+  ]
+}

@@ -1,0 +1,82 @@
+{
+  "id": 123936,
+  "num_rows": 900,
+  "file_format": "csv",
+  "name": "leads_based_on_campaigns",
+  "include_header": true,
+  "columns": [
+    {
+      "name": "lead_id",
+      "null_percentage": 0,
+      "type": "Sequence",
+      "start": 12001,
+      "step": 1,
+      "repeat": 1,
+      "formula": ""
+    },
+    {
+      "name": "campaign_id",
+      "null_percentage": 0,
+      "type": "Dataset Column",
+      "dataset": "campaigns",
+      "column": "campaign_id",
+      "selectionStyle": "custom",
+      "formula": ""
+    },
+    {
+      "name": "channel",
+      "null_percentage": 0,
+      "type": "Dataset Column",
+      "dataset": "campaigns",
+      "column": "channel",
+      "selectionStyle": null,
+      "formula": ""
+    },
+    {
+      "name": "source",
+      "null_percentage": 0,
+      "type": "Dataset Column",
+      "dataset": "campaigns",
+      "column": "channel",
+      "selectionStyle": "custom",
+      "formula": "if channel == 'Digital' then 'LandingPage'\r\nelsif channel == 'Email' then\r\n    ( random(1,100) < 90) ? 'LandingPage' : 'Inbound'\r\nelseif channel == 'Content Syndication' then 'LandingPage'\r\nelseif channel == 'Tradeshow' then\r\n    ( random(1,100) < 80) ? 'Scan' : 'Inbound'\r\nelse 'LandingPage'\r\nend"
+    },
+    {
+      "name": "date_added",
+      "null_percentage": 0,
+      "type": "Dataset Column",
+      "dataset": "campaigns",
+      "column": "start_date",
+      "selectionStyle": "random",
+      "formula": "if channel == 'Tradeshow' then\r\n     (date(this) + days(random(0,3))).strftime(\"%Y-%m-%d\")\r\nelse (date(this) + days(random(1,20))).strftime(\"%Y-%m-%d\")\r\nend"
+    },
+    {
+      "name": "full_name",
+      "null_percentage": 0,
+      "type": "Full Name",
+      "formula": ""
+    },
+    {
+      "name": "email",
+      "null_percentage": 0,
+      "type": "Email Address",
+      "formula": ""
+    },
+    {
+      "name": "score",
+      "null_percentage": 0,
+      "type": "Number",
+      "min": 1,
+      "max": 99,
+      "decimals": 0,
+      "formula": ""
+    },
+    {
+      "name": "stage",
+      "null_percentage": 0,
+      "type": "Scenario",
+      "scenario": "mql_chance",
+      "formula": "if score < 50 then 0\r\nelsif random(1,100) <= this then\r\n     (random(1,100) <= 8) ? 2 : 1\r\nelse 0\r\nend"
+    }
+  ]
+}

@@ -7,7 +7,7 @@ Demonstration files used in the GoodData Live! Webinar series plus resources.
 This folder contains the ACME demo files and scripts for the GoodData Live! webinar series. For most visitors, the most useful thing here will be the scripts in the `bin` directory.
 
 The 'ACME' demo is meant to represent a fairly generic company that purchases,
-markets and sells things. It's scoope will evolve as the Webinar series progresses.
+markets and sells things. It's scope will evolve as the Webinar series progresses.
 
 Check the Git tags/releases to obtain the configuration for a specific webinar episode.
 
@@ -33,4 +33,4 @@ A couple of the scripts use [csvkit](https://csvkit.readthedocs.io/en/stable/).
 
 The scripts in `bin` are mostly to facilitate the webinar demos, but there are a few scripts here that may be generally useful.
 
-* add2manifest.sh -- given a csv file, creates a manifest file, or adds to an existing manifest file.
+* `add2manifest.sh` -- given a csv file, creates a manifest file, or adds to an existing manifest file.
