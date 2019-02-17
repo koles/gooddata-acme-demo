@@ -17,7 +17,8 @@ customers_file="data/temp/customers_1_${timestamp}.csv"
 cp data/customers.csv $customers_file
 
 # create the manifest file
-pathname="s3://gooddata-demo/acme/source/data"
+s3_location="s3://gooddata-demo/acme"
+pathname="${s3_location}/source/data"
 ./bin/add2manifest.sh -p $pathname $orders_file
 manifest="manifest_*.csv"
 ./bin/add2manifest.sh -p $pathname $customers_file $manifest
@@ -26,9 +27,9 @@ manifest="manifest_*.csv"
 # upload files to S3
 aws s3 rm --recursive ${s3_location}/source/
 aws s3 cp configuration/feed.txt ${s3_location}/source/configuration/feed.txt
-aws s3 cp $orders_file s3://gooddata-demo/acme/source/data/
-aws s3 cp $customers_file s3://gooddata-demo/acme/source/data/
-aws s3 cp $manifest s3://gooddata-demo/acme/source/manifest/
+aws s3 cp $orders_file s${s3_location}/source/data/
+aws s3 cp $customers_file ${s3_location}/source/data/
+aws s3 cp $manifest ${s3_location}/source/manifest/
 
 # move files somewhere else
 mv $customers_file $orders_file $manifest data/processed
