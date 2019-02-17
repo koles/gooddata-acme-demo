@@ -13,3 +13,12 @@ orders|1|customer_id|varchar(10)|3|
 orders|1|category|varchar(40)|4|
 orders|1|price|decimal(12,2)|5|
 orders|1|quantity|integer|6|
+ledger|1|account_number|varchar(10)|1|
+ledger|1|account_name|varchar(40)|2|
+ledger|1|account_type|varchar(20)|3|
+ledger|1|account_category|varchar(20)|4|
+ledger|1|period_begin|datetime|5|YYYY/MM/DD
+ledger|1|period_end|datetime|6|YYYY/MM/DD
+ledger|1|balance_amount|decimal(12,2)|7|
+ledger|1|account_id|integer|8|
+ledger|1|period_id|integer|9|

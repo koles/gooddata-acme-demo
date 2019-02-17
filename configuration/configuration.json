@@ -10,6 +10,17 @@
                 }
             }
         },
+        "ledger": {
+            "global": {
+                "custom": {
+                    "hub": [
+                        "period_id",
+                        "account_id"
+                    ],
+                    "export_type": "full"
+                }
+            }
+        },
         "orders": {
             "global": {
                 "custom": {
@@ -29,14 +40,31 @@
                 "customers",
                 "orders"
             ]
+        },
+        "csv_downloader_2": {
+            "type": "csv",
+            "settings": "sftp_csv",
+            "entities": [
+                "ledger"
+            ]
         }
     },
     "integrators": {
         "ads_integrator_1": {
             "type": "ads_storage",
             "batches": [
-                "csv_downloader_1"
+                "csv_downloader_1",
+                "csv_downloader_2"
             ]
+        }
+    },
+    "ads_storage": {
+        "instance_id": "bf1ee540f9f9e9004b417c7927c0321e",
+        "username": "se+demos-admin@gooddata.com",
+        "server": "salesengineering.na.gooddata.com",
+        "options": {
+            "recreate_source_tables": true,
+            "disable_sys_load_id_logging": false
         }
     },
     "sftp_csv": {
@@ -53,14 +81,5 @@
             }
         },
         "type": "sftp"
-    },
-    "ads_storage": {
-        "instance_id": "bf1ee540f9f9e9004b417c7927c0321e",
-        "username": "se+demos-admin@gooddata.com",
-        "server": "salesengineering.na.gooddata.com",
-        "options": {
-            "recreate_source_tables": true,
-            "disable_sys_load_id_logging": false
-        }
     }
 }
