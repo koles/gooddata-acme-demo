@@ -1,0 +1,19 @@
+category_id,category,product_id,product_name,avg_price,frequency
+100,Clothing,110,Pullover,41,3
+100,Clothing,120,Polo Shirt,36,6
+100,Clothing,130,Slacks,32,8
+100,Clothing,140,Shorts,23,10
+100,Clothing,150,Skirt,19,12
+100,Clothing,160,T-Shirt,16,16
+200,Electronics,210,Artego,100,2
+200,Electronics,220,Compglass,50,4
+200,Electronics,230,Magnemo,75,8
+200,Electronics,240,PortaCode,25,10
+300,Home,310,Applica,33,2
+300,Home,320,ChalkTalk,66,4
+300,Home,330,Optique,99,6
+300,Home,340,Peril,11,8
+400,Outdoor,410,Biolid,230,2
+400,Outdoor,420,Elentrix,480,1
+400,Outdoor,430,Integres,720,1
+400,Outdoor,440,Neptide,1350,1

@@ -1,0 +1,60 @@
+channel_id,channel,group,budget,frequency
+101,Aggregator,Advertising,700,4
+102,Billboard,Advertising,9500,1
+103,Digital Signage,Advertising,4600,1
+104,In-game,Advertising,1400,2
+105,Insert,Advertising,4400,3
+106,LinkedIn Ad,Advertising,1000,5
+107,Magazine Ad,Advertising,4300,3
+108,Mobile Ad,Advertising,800,3
+109,Paid Review,Advertising,1200,4
+110,Product Packaging,Advertising,4400,2
+111,Radio Ad,Advertising,4100,1
+112,Receipt Code,Advertising,2400,2
+113,Sports Sponsorship,Advertising,54700,1
+114,YouTube Pre-roll,Advertising,1900,5
+201,Content marketing,Content,2800,5
+202,Infographics,Content,2900,5
+203,Presentation,Content,4000,5
+204,Report Sponsorship,Content,3600,5
+205,Research Paper,Content,5900,5
+206,Video,Content,11700,3
+301,Alliance Marketing,Direct,9500,2
+302,Catalogue,Direct,24700,1
+303,Postal Mail,Direct,4800,5
+304,Swag,Direct,7400,5
+401,Email Blast,Email,2800,5
+402,Email Signature,Email,1900,5
+501,Brand Hijack,Event,28900,1
+502,Events,Event,64000,2
+503,Prizes/Exhibitions,Event,7600,3
+601,Display,In-Store,14000,1
+602,Kiosk,In-Store,4000,2
+603,Loyalty card,In-Store,2700,2
+604,POS displays,In-Store,5200,5
+605,Signage,In-Store,3200,5
+701,Mobile App,Mobile,3200,1
+702,SMS,Mobile,3900,5
+801,Press Release,PR,4700,5
+802,Public Relations,PR,6300,5
+811,PPC,Search,6900,5
+812,SEO,Search,2300,5
+901,Blog,Social,700,5
+902,Facebook Page,Social,2300,5
+903,Facebook Post,Social,700,5
+904,Forum,Social,3900,5
+905,Influencer outreach,Social,2100,5
+906,LinkedIn Group,Social,1400,5
+907,LinkedIn Post,Social,1400,5
+908,Twitter,Social,800,5
+909,Twitter account,Social,1800,5
+910,Youtube channel,Social,800,2
+359,Hold Message,Telephone,2400,3
+369,Telesales,Telephone,42200,2
+150,Film/TV product placement,TV,22800,1
+151,Program Sponsorship,TV,28400,1
+152,Smart TV/Console App,TV,23600,1
+153,TV advert,TV,4500,1
+721,Amazon Store,Web,2100,3
+722,Ebay Store,Web,9500,3
+723,Microsites,Web,2000,5
