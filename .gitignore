@@ -6,3 +6,4 @@ bin/lib/creds.sh
 cc_project/
 doc/
 bin2/
+.ipynb_checkpoints/
