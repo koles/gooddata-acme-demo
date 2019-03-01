@@ -1,4 +1,4 @@
-customer_id,fullname,email_address,birthdate,gender,city,state,postal_code,country2,frequency
+customer_id,fullname,email_address,birthdate,gender,city,state,postal_code,country_code2,frequency
 10001,Gerrie Castelli,gcastelli0@nhs.uk,1984-02-01,M,New York City,NY,10175,US,1
 10002,Paloma Aspel,paspel1@indiatimes.com,1969-07-24,F,Peoria,AZ,85383,US,1
 10003,Bobbi Reichert,breichert2@scientificamerican.com,1996-10-14,F,Erie,PA,16534,US,3

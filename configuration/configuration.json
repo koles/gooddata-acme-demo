@@ -1,5 +1,32 @@
 {
     "entities": {
+        "campaign_channels": {
+            "global": {
+                "custom": {
+                    "hub": [
+                        "campaign_channel_id"
+                    ]
+                }
+            }
+        },
+        "campaigns": {
+            "global": {
+                "custom": {
+                    "hub": [
+                        "campaign_id"
+                    ]
+                }
+            }
+        },
+        "categories_products": {
+            "global": {
+                "custom": {
+                    "hub": [
+                        "product_id"
+                    ]
+                }
+            }
+        },
         "customers": {
             "global": {
                 "custom": {
@@ -10,24 +37,22 @@
                 }
             }
         },
-        "ledger": {
+        "orders": {
             "global": {
                 "custom": {
                     "hub": [
-                        "period_id",
-                        "account_id"
+                        "order_line_id"
                     ],
                     "export_type": "full"
                 }
             }
         },
-        "orders": {
+        "channels": {
             "global": {
                 "custom": {
                     "hub": [
-                        "order_id"
-                    ],
-                    "export_type": "full"
+                        "channel_id"
+                    ]
                 }
             }
         }
@@ -37,15 +62,12 @@
             "type": "csv",
             "settings": "sftp_csv",
             "entities": [
+                "campaigns",
+                "campaign_channels",
+                "categories_products",
                 "customers",
-                "orders"
-            ]
-        },
-        "csv_downloader_2": {
-            "type": "csv",
-            "settings": "sftp_csv",
-            "entities": [
-                "ledger"
+                "orders",
+                "channels"
             ]
         }
     },
@@ -53,8 +75,7 @@
         "ads_integrator_1": {
             "type": "ads_storage",
             "batches": [
-                "csv_downloader_1",
-                "csv_downloader_2"
+                "csv_downloader_1"
             ]
         }
     },
@@ -68,18 +89,19 @@
         }
     },
     "sftp_csv": {
+        "type": "sftp",
         "options": {
+            "folder": "/stfp4demo/manifest",
+            "move_data_after_processing_to_path": "/stfp4demo/processed",
+            "ignore_check_sum": false,
+            "generate_manifests": true,
+            "files_structure": {
+                "enclosed_by": "\""
+            },
             "username": "stfp4demo",
             "host": "financial-services-gd.com",
             "auth_mode": "password",
-            "folder": "/stfp4demo/manifest",
-            "move_data_after_processing_to_path": "/stfp4demo/processed",
-            "data_structure_info": "/stfp4demo/feed.txt",
-            "ignore_check_sum": false,
-            "files_structure": {
-                "enclosed_by": "\""
-            }
-        },
-        "type": "sftp"
+            "data_location": "/stfp4demo/"
+        }
     }
 }
