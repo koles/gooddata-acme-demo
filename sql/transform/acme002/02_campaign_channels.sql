@@ -1,6 +1,6 @@
 TRUNCATE TABLE out_campaign_channels;
 INSERT INTO out_campaign_channels (
-	a__channel__campaign_channel_id,
+	cp__channel__campaign_channel_id,
 	a__channel__channel_category,
 	a__channel__type,
 	f__channel__budget,

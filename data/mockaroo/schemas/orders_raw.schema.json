@@ -1,0 +1,216 @@
+{
+  "id": 148955,
+  "num_rows": 1000,
+  "file_format": "csv",
+  "name": "orders_raw",
+  "include_header": true,
+  "columns": [
+    {
+      "name": "__customer_id",
+      "null_percentage": 0,
+      "type": "Dataset Column",
+      "dataset": "customers",
+      "column": "customer_id",
+      "selectionStyle": "random",
+      "formula": ""
+    },
+    {
+      "name": "__order_num",
+      "null_percentage": 0,
+      "type": "Digit Sequence",
+      "format": "#^^^##",
+      "formula": ""
+    },
+    {
+      "name": "order_id",
+      "null_percentage": 0,
+      "type": "Template",
+      "value": "{__customer_id}-{__order_num}",
+      "formula": ""
+    },
+    {
+      "name": "customer_id",
+      "null_percentage": 0,
+      "type": "Template",
+      "value": "{__customer_id}",
+      "formula": ""
+    },
+    {
+      "name": "__month",
+      "null_percentage": 0,
+      "type": "Custom List",
+      "values": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10",
+        "11",
+        "12"
+      ],
+      "selectionStyle": "custom",
+      "distribution": [
+        {
+          "frequencies": {
+            "1": "88",
+            "2": "89",
+            "3": "95",
+            "4": "100",
+            "5": "102",
+            "6": "102",
+            "7": "101",
+            "8": "100",
+            "9": "96",
+            "10": "99",
+            "11": "108",
+            "12": "120"
+          }
+        }
+      ],
+      "formula": ""
+    },
+    {
+      "name": "__year",
+      "null_percentage": 0,
+      "type": "Number",
+      "min": 1,
+      "max": 100,
+      "decimals": 0,
+      "formula": "if this < 6 then 2015\r\nelsif this < 14 then 2016\r\nelsif this < 26 then 2017\r\nelsif this < 43 then 2018\r\nelsif this < 68 then 2019\r\nelse 2020 end"
+    },
+    {
+      "name": "order_date",
+      "null_percentage": 0,
+      "type": "Date",
+      "min": "01/02/2015",
+      "max": "12/31/2020",
+      "format": "%Y/%m/%d",
+      "formula": "Date.new(__year, __month, random(1,28))"
+    },
+    {
+      "name": "order_type",
+      "null_percentage": 0,
+      "type": "Custom List",
+      "values": [
+        "Online",
+        "Retail"
+      ],
+      "selectionStyle": "custom",
+      "distribution": [
+        {
+          "frequencies": {
+            "Online": "3",
+            "Retail": "1"
+          }
+        }
+      ],
+      "formula": ""
+    },
+    {
+      "name": "order_status",
+      "null_percentage": 0,
+      "type": "Custom List",
+      "values": [
+        "Shipped",
+        "Cancelled",
+        "Completed",
+        "Returned"
+      ],
+      "selectionStyle": "custom",
+      "distribution": [
+        {
+          "rule": "order_type == \"Retail\"",
+          "frequencies": {
+            "Shipped": "0",
+            "Cancelled": "0",
+            "Completed": "60",
+            "Returned": "1"
+          }
+        },
+        {
+          "rule": "order_type == \"Online\"",
+          "frequencies": {
+            "Shipped": "80",
+            "Cancelled": "2",
+            "Completed": "0",
+            "Returned": "0"
+          }
+        }
+      ],
+      "formula": ""
+    },
+    {
+      "name": "shipping_amount",
+      "null_percentage": 0,
+      "type": "Number",
+      "min": 5.01,
+      "max": 18.99,
+      "decimals": 2,
+      "formula": ""
+    },
+    {
+      "name": "product_id",
+      "null_percentage": 0,
+      "type": "Dataset Column",
+      "dataset": "categories_products",
+      "column": "product_id",
+      "selectionStyle": "random",
+      "formula": ""
+    },
+    {
+      "name": "__price_variance",
+      "null_percentage": 0,
+      "type": "Normal Distribution",
+      "mean": "0",
+      "sd": "0.1",
+      "decimals": 2,
+      "formula": ""
+    },
+    {
+      "name": "__avg_price",
+      "null_percentage": 0,
+      "type": "Dataset Column",
+      "dataset": "categories_products",
+      "column": "avg_price",
+      "selectionStyle": "random",
+      "formula": ""
+    },
+    {
+      "name": "price",
+      "null_percentage": 0,
+      "type": "Number",
+      "min": 1,
+      "max": 100,
+      "decimals": 2,
+      "formula": "__avg_price * (1 + __price_variance) * (1.05**(__year - 2014))"
+    },
+    {
+      "name": "quantity",
+      "null_percentage": 0,
+      "type": "Custom List",
+      "values": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
+      "selectionStyle": "custom",
+      "distribution": [
+        {
+          "frequencies": {
+            "1": "30",
+            "2": "2",
+            "3": "1",
+            "4": 1
+          }
+        }
+      ],
+      "formula": ""
+    }
+  ]
+}
