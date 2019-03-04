@@ -11,7 +11,7 @@ SELECT
 	TO_NUMBER(price),
 	TO_NUMBER(quantity),
 	order_id,
-	product_id
+	TO_CHAR(TRUNC(TO_NUMBER(product_id)))
 FROM stg_csv_orders_merge
 WHERE order_id IN (SELECT cp__order_id FROM out_orders)
 ORDER BY 1

@@ -5,7 +5,8 @@
                 "custom": {
                     "hub": [
                         "campaign_channel_id"
-                    ]
+                    ],
+                    "export_type": "full"
                 }
             }
         },
@@ -14,7 +15,8 @@
                 "custom": {
                     "hub": [
                         "campaign_id"
-                    ]
+                    ],
+                    "export_type": "full"
                 }
             }
         },
@@ -23,7 +25,8 @@
                 "custom": {
                     "hub": [
                         "product_id"
-                    ]
+                    ],
+                    "export_type": "full"
                 }
             }
         },
@@ -52,7 +55,8 @@
                 "custom": {
                     "hub": [
                         "channel_id"
-                    ]
+                    ],
+                    "export_type": "full"
                 }
             }
         }
