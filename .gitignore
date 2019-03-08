@@ -2,6 +2,7 @@
 .DS_Store
 data/temp/*
 data/processed/*
+data/source/*
 bin/lib/creds.sh
 cc_project/
 doc/
