@@ -70,7 +70,7 @@ for i, row in orders.iterrows():
         new_orders.loc[new_orders_idx, 'order_line_id'] = row['order_id']+'-'+str(order_line)
         new_orders.loc[new_orders_idx, 'tracking_code'] = tc
         new_orders.loc[new_orders_idx, "product_id"] = str(order_lines.loc[order_lines_idx, "product_id"])
-        new_orders.loc[new_orders_idx, "quantity"] = order_lines.loc[order_lines_idx, "quantity"]
+        new_orders.loc[new_orders_idx, "quantity"] = str(order_lines.loc[order_lines_idx, "quantity"])
 
         # add a bit of inflation to the prices
         price = float(order_lines.loc[order_lines_idx, "price"])
