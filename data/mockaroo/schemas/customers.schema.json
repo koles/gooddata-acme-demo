@@ -8,14 +8,22 @@
     {
       "name": "customer_id",
       "null_percentage": 0,
-      "type": "Regular Expression",
-      "value": "\\d{8}",
+      "type": "Sequence",
+      "start": 10001,
+      "step": 1,
+      "repeat": 1,
       "formula": ""
     },
     {
       "name": "fullname",
       "null_percentage": 0,
       "type": "Full Name",
+      "formula": ""
+    },
+    {
+      "name": "email_address",
+      "null_percentage": 0,
+      "type": "Email Address",
       "formula": ""
     },
     {
@@ -38,7 +46,7 @@
       "name": "birthdate",
       "null_percentage": 0,
       "type": "Formula",
-      "value": "date('1/1/1990') + days(__corrected_offset)",
+      "value": "(date('1/1/1990') + days(__corrected_offset)).strftime(\"%Y-%m-%d\")",
       "formula": ""
     },
     {
@@ -48,9 +56,35 @@
       "formula": ""
     },
     {
-      "name": "ip_address",
+      "name": "city",
       "null_percentage": 0,
-      "type": "IP Address v4",
+      "type": "City",
+      "formula": ""
+    },
+    {
+      "name": "state",
+      "null_percentage": 0,
+      "type": "State (abbrev)",
+      "onlyUSPlaces": true,
+      "formula": ""
+    },
+    {
+      "name": "postal_code",
+      "null_percentage": 0,
+      "type": "Postal Code",
+      "formula": ""
+    },
+    {
+      "name": "country_code2",
+      "null_percentage": 0,
+      "type": "Country Code",
+      "formula": ""
+    },
+    {
+      "name": "frequency",
+      "null_percentage": 0,
+      "type": "Geometric Distribution",
+      "probability": "0.5",
       "formula": ""
     }
   ]

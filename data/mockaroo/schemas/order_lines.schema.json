@@ -1,0 +1,68 @@
+{
+  "id": 156985,
+  "num_rows": 10000,
+  "file_format": "csv",
+  "name": "order_lines",
+  "include_header": true,
+  "columns": [
+    {
+      "name": "product_id",
+      "null_percentage": 0,
+      "type": "Dataset Column",
+      "dataset": "categories_products",
+      "column": "product_id",
+      "selectionStyle": "random",
+      "formula": ""
+    },
+    {
+      "name": "__price_variance",
+      "null_percentage": 0,
+      "type": "Normal Distribution",
+      "mean": "0",
+      "sd": "0.1",
+      "decimals": 2,
+      "formula": ""
+    },
+    {
+      "name": "__avg_price",
+      "null_percentage": 0,
+      "type": "Dataset Column",
+      "dataset": "categories_products",
+      "column": "avg_price",
+      "selectionStyle": null,
+      "formula": ""
+    },
+    {
+      "name": "price",
+      "null_percentage": 0,
+      "type": "Number",
+      "min": 1,
+      "max": 100,
+      "decimals": 2,
+      "formula": "__avg_price * (1 + __price_variance) "
+    },
+    {
+      "name": "quantity",
+      "null_percentage": 0,
+      "type": "Custom List",
+      "values": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
+      "selectionStyle": "custom",
+      "distribution": [
+        {
+          "frequencies": {
+            "1": "30",
+            "2": "2",
+            "3": "1",
+            "4": 1
+          }
+        }
+      ],
+      "formula": ""
+    }
+  ]
+}

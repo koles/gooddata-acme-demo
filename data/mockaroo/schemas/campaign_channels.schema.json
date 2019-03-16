@@ -1,0 +1,86 @@
+{
+  "id": 155682,
+  "num_rows": 1000,
+  "file_format": "csv",
+  "name": "campaign_channels",
+  "include_header": true,
+  "columns": [
+    {
+      "name": "campaign_id",
+      "null_percentage": 0,
+      "type": "Dataset Column",
+      "dataset": "clumpy_sequence",
+      "column": "campaign_id",
+      "selectionStyle": "sequential",
+      "formula": "this.to_i + 10000"
+    },
+    {
+      "name": "channel_id",
+      "null_percentage": 0,
+      "type": "Dataset Column",
+      "dataset": "channels",
+      "column": "channel_id",
+      "selectionStyle": "random",
+      "formula": ""
+    },
+    {
+      "name": "category",
+      "null_percentage": 0,
+      "type": "Dataset Column",
+      "dataset": "channels",
+      "column": "group",
+      "selectionStyle": null,
+      "formula": ""
+    },
+    {
+      "name": "channel",
+      "null_percentage": 0,
+      "type": "Dataset Column",
+      "dataset": "channels",
+      "column": "channel",
+      "selectionStyle": null,
+      "formula": ""
+    },
+    {
+      "name": "budget",
+      "null_percentage": 0,
+      "type": "Dataset Column",
+      "dataset": "channels",
+      "column": "budget",
+      "selectionStyle": null,
+      "formula": ""
+    },
+    {
+      "name": "__variance",
+      "null_percentage": 0,
+      "type": "Normal Distribution",
+      "mean": ".95",
+      "sd": "0.2",
+      "decimals": 2,
+      "formula": ""
+    },
+    {
+      "name": "spend",
+      "null_percentage": 0,
+      "type": "Number",
+      "min": 0,
+      "max": 1,
+      "decimals": 0,
+      "formula": "round(budget * __variance)"
+    },
+    {
+      "name": "tracking_code",
+      "null_percentage": 0,
+      "type": "Character Sequence",
+      "format": "#^^^^^",
+      "formula": ""
+    },
+    {
+      "name": "campaign_channel_id",
+      "null_percentage": 0,
+      "type": "Formula",
+      "value": "campaign_id.to_s + category[0..1].upcase + tracking_code",
+      "formula": "round(budget * __variance)"
+    }
+  ]
+}

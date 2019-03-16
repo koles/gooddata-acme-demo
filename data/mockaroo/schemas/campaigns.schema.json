@@ -1,0 +1,90 @@
+{
+  "id": 153046,
+  "num_rows": 120,
+  "file_format": "csv",
+  "name": "campaigns",
+  "include_header": true,
+  "columns": [
+    {
+      "name": "campaign_id",
+      "null_percentage": 0,
+      "type": "Sequence",
+      "start": 10001,
+      "step": 1,
+      "repeat": 1,
+      "formula": ""
+    },
+    {
+      "name": "__date_inc",
+      "null_percentage": 0,
+      "type": "Normal Distribution",
+      "mean": "0",
+      "sd": "3",
+      "decimals": 0,
+      "formula": ""
+    },
+    {
+      "name": "__date_seq",
+      "null_percentage": 0,
+      "type": "Sequence",
+      "start": 0,
+      "step": 21,
+      "repeat": 1,
+      "formula": ""
+    },
+    {
+      "name": "start_date",
+      "null_percentage": 0,
+      "type": "Formula",
+      "value": "(date('1/1/2015') + days(__date_inc + __date_seq)).strftime('%Y-%m-%d')",
+      "formula": "date('1/1/2015') + days(__date_inc + __date_seq)"
+    },
+    {
+      "name": "__channel_days",
+      "null_percentage": 0,
+      "type": "Number",
+      "min": 3,
+      "max": 15,
+      "decimals": 0,
+      "formula": ""
+    },
+    {
+      "name": "end_date",
+      "null_percentage": 0,
+      "type": "Formula",
+      "value": "(date(start_date) + days(__channel_days)).strftime('%Y-%m-%d')",
+      "formula": ""
+    },
+    {
+      "name": "__name",
+      "null_percentage": 0,
+      "type": "App Name",
+      "formula": ""
+    },
+    {
+      "name": "__name_seq",
+      "null_percentage": 0,
+      "type": "Character Sequence",
+      "format": "#^^###",
+      "formula": ""
+    },
+    {
+      "name": "campaign",
+      "null_percentage": 0,
+      "type": "Formula",
+      "value": "(date(start_date)).strftime('%Y ') + __name + ' ' + __name_seq",
+      "formula": ""
+    },
+    {
+      "name": "country",
+      "null_percentage": 0,
+      "type": "Custom List",
+      "values": [
+        "US"
+      ],
+      "selectionStyle": "sequential",
+      "distribution": null,
+      "formula": ""
+    }
+  ]
+}
