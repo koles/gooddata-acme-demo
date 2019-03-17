@@ -19,9 +19,9 @@ function prepare_orders() {
     a__order_id:label.orderlines.order_id \
     a__orderstatus:label.orderlines.order_status \
     d__date:date \
-    r__campaigns:label.campaigns.campaign_id \
-    r__customers:label.orderlines.customer_id \
-    r__products.label.orderlines.product_id \
+    r__campaigns:dataset.campaigns \
+    r__customers:dataset.customers \
+    r__products:dataset.products \
     f__orderlines__price:fact.orderlines.price \
     f__orderlines__quantity:fact.orderlines.quantity \
     > "${TARGET_DIR}/order_lines.csv"
@@ -31,7 +31,7 @@ function prepare_customers() {
   reshuffle \
     out_customers.csv \
     cp__id:label.orderlines.customer_id \
-    a__name:label.orderlines.customer_name \
+    a__name:label.orderlines.fullname \
     a__state:label.orderlines.state \
     > "${TARGET_DIR}/customers.csv"
 }
@@ -56,12 +56,12 @@ function prepare_campaigns() {
 function prepare_campaigns_channels() {
   reshuffle \
     out_campaign_channels.csv \
-    cp__channel__campaign_channel_id:campaign_channels.campaign_channel_id \
+    cp__channel__campaign_channel_id:label.campaign_channels.campaign_channel_id \
     a__channel__channel_category:label.campaign_channels.category \
     a__channel__type:label.campaign_channels.type \
     f__channel__budget:fact.campaign_channels.budget \
     f__channel__spend:fact.campaign_channels.spend \
-    r__campaigns \
+    r__campaigns:dataset.campaigns \
     > "${TARGET_DIR}/campaign_channels.csv"
 }
 
