@@ -24,7 +24,7 @@ function prepare_orders() {
     r__products.label.orderlines.product_id \
     f__orderlines__price:fact.orderlines.price \
     f__orderlines__quantity:fact.orderlines.quantity \
-    > "${TARGET_DIR}/orderlines.csv"
+    > "${TARGET_DIR}/order_lines.csv"
 }
 
 function prepare_customers() {
