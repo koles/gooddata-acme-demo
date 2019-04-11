@@ -12,6 +12,6 @@ select
 	(select count(*) from src_csv_customers_merge_uniq) as 'uniq',
 	(select count(*) from src_csv_customers_merge_diff) as 'diff',
 	(select count(*) from stg_csv_customers_merge) as 'merge',
-	null as 'output'
+	(select count(*) from out_customers) as 'output'
 from dual
 	

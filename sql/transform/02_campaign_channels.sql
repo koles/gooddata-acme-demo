@@ -11,8 +11,8 @@ SELECT
 	campaign_channel_id,
 	category,
 	channel AS channel_type,
-	TO_NUMBER(budget),
-	TO_NUMBER(spend),
+	TO_NUMBER(budget) / 10,
+	TO_NUMBER(spend) / 10,
 	campaign_id
 FROM stg_csv_campaign_channels_merge
 WHERE campaign_id IN (SELECT cp__campaignid FROM out_campaigns);

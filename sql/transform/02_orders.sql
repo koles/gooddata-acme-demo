@@ -23,5 +23,5 @@ SELECT DISTINCT
 FROM stg_csv_orders_merge O 
 LEFT OUTER JOIN stg_csv_campaign_channels_merge C
 ON O.tracking_code = C.tracking_code
-WHERE TO_DATE(order_date, 'YYYY-MM_DD') < CURRENT_DATE
+WHERE TO_DATE(order_date, 'YYYY-MM_DD') <= CURRENT_DATE
 ORDER BY order_line_id;
