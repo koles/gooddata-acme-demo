@@ -49,16 +49,6 @@
                     "export_type": "full"
                 }
             }
-        },
-        "channels": {
-            "global": {
-                "custom": {
-                    "hub": [
-                        "channel_id"
-                    ],
-                    "export_type": "full"
-                }
-            }
         }
     },
     "downloaders": {
@@ -66,12 +56,11 @@
             "type": "csv",
             "settings": "sftp_csv",
             "entities": [
-                "campaigns",
                 "campaign_channels",
+                "campaigns",
                 "categories_products",
                 "customers",
-                "orders",
-                "channels"
+                "orders"
             ]
         }
     },
